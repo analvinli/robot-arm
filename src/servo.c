@@ -6,6 +6,7 @@
 #define MIN_DUTY_US 500
 #define MAX_DUTY_US 2500
 #define PWM_PERIOD_US 20000
+#define INTERRUPT_ERROR_US 16
 
 typedef struct{
     volatile uint8_t* port;
@@ -60,7 +61,7 @@ void servo_write(uint8_t* port_in, uint8_t pin, uint8_t high){
 //every 16us
 ISR(TIMER0_OVF_vect) {
     elapsed_time_us+=16;
-    if(elapsed_time_us <= MAX_DUTY_US){
+    if(elapsed_time_us <= MAX_DUTY_US+INTERRUPT_ERROR_US){
         for(int i = 0;i<servo_count;i++){
             if(elapsed_time_us>=servo_arr[i].pulse_width){
                 //turn off when duty cycle is up

@@ -8,10 +8,6 @@ void main(){
     DDRB |= (1<<PB5);
     timer0_init();
     servo_add(&PORTD,3);
-    servo_add(&PORTD,4);
-    servo_add(&PORTD,5);
-    servo_add(&PORTD,6);
-
 
     while(1){
         loop();
@@ -19,9 +15,9 @@ void main(){
     return 0;
 }
 
-//500 to 2500 us
-//0.5 to 2.5 pulse length (ms)
-//-90 to +90 degrees
+//0.5 to 2.5 ms pulse len
+//500 to 2500 us pulse len
+//-90 to +90 degrees, 
 
 //with timer0 and no div factor, timer0 overflows every 16 us
 //2000us/16us = 125 positions
@@ -29,13 +25,6 @@ void main(){
 
 
 void loop(){
-    // digital_write(3,1);
-    // _delay_ms(0.5);
-    // digital_write(3,0);
-    // _delay_ms(19.5);
-
-    // digital_write(3,1);
-    // _delay_ms(2.5);
-    // digital_write(3,0);
-    // _delay_ms(17.5);
+    servo_set_position(0,0);
+    
 }
