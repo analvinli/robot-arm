@@ -47,6 +47,7 @@ void servo_set_pulse_width(uint8_t servo_index, uint16_t target_pulse_width_us){
 }
 
 void servo_set_position(uint8_t servo_index, double target_position){ //target_position in degrees: [0,180]
+    cli();
     if(target_position>180||servo_index>=servo_count){
         return;
     }
@@ -56,6 +57,7 @@ void servo_set_position(uint8_t servo_index, double target_position){ //target_p
     uint16_t pulse_width_us = (uint16_t)(((target_position/180.0)*(maximum_pulse-minimum_pulse))+minimum_pulse);
 
     servo_set_pulse_width(servo_index, pulse_width_us);
+    sei();
     return;
 }
 
