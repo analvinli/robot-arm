@@ -16,6 +16,7 @@ It uses **Inverse Kinematics** to calculate joint angles for a desired end effec
 - **Servo 1 (Base rotation):** rotates the arm left/right along the horizontal plane.  
 - **Servo 2 (Shoulder joint):** moves the arm up/down, connecting the base to the first link. 
 - **Servo 3 (Elbow joint):** controls the second link, adjusting the arm’s reach and vertical position.  
+
 See combined assembly
 
 ## Usage
