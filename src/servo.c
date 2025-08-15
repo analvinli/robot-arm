@@ -38,9 +38,7 @@ void servo_set_pulse_width(uint8_t servo_index, uint16_t target_pulse_width_us){
             servo_array[1].pulse_width = target_pulse_width_us;
             return;
         case 2:{
-            uint16_t minimum_pulse = servo_array[servo_index].min_pulse;
-            uint16_t maximum_pulse = servo_array[servo_index].max_pulse;
-            servo_array[2].pulse_width = (maximum_pulse-target_pulse_width_us)+minimum_pulse;
+            servo_array[2].pulse_width = target_pulse_width_us;
             return;
         }
     }
@@ -76,7 +74,6 @@ ISR(TIMER0_OVF_vect) {
     if(elapsed_time_us <= 2000){
         for(int i = 0;i<servo_count;i++){
             if(elapsed_time_us>=servo_array[i].pulse_width){
-                testfunc();
                 //turn off when duty cycle is up
                 servo_write(servo_array[i].port, servo_array[i].pin, 0);
             }
@@ -84,7 +81,6 @@ ISR(TIMER0_OVF_vect) {
     }
 
     if(elapsed_time_us >= PWM_PERIOD_US){
-        testfunc();
         //end of period
         elapsed_time_us = 0;
 
@@ -93,8 +89,4 @@ ISR(TIMER0_OVF_vect) {
             servo_write(servo_array[j].port, servo_array[j].pin, 1);
         }
     }
-}
-
-void testfunc(){
-    return;
 }
