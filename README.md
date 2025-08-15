@@ -20,7 +20,7 @@ It uses **Inverse Kinematics** to calculate joint angles for a desired end effec
 - **Servo 2 (Shoulder joint):** moves the arm up/down, connecting the base to the first link. 
 - **Servo 3 (Elbow joint):** controls the second link, adjusting the arm’s reach and vertical position.  
 
-**See the full assembly** [here](./stl/robot_arm_assembly.stl)
+**See the full assembly** [here](./stl/arm_full_assembly.stl)
 
 ## Usage
 1. **Calibrate your SG90 servos**
