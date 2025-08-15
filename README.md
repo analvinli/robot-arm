@@ -40,3 +40,4 @@ It uses **Inverse Kinematics** to calculate joint angles for a desired end effec
 ## Notes
 - Ensure your servo power supply can handle all servos simultaneously. Insufficient power may cause reduced speed or unstable pose.
 - My IK equations assume link length is 100mm. Adjust equations if your dimesnions differ
+- No end effectors used in this project
