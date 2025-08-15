@@ -11,13 +11,16 @@ It uses **Inverse Kinematics** to calculate joint angles for a desired end effec
 - Power supply suitable for 3 servos
 - Base and 100mm Links (mine are 3d printed, see included STL files)
 
+**CAD/3D Files:**  
+- [STL files for 3D printing](./stl/)  
+
 ## Servo Configuration
 
 - **Servo 1 (Base rotation):** rotates the arm left/right along the horizontal plane.  
 - **Servo 2 (Shoulder joint):** moves the arm up/down, connecting the base to the first link. 
 - **Servo 3 (Elbow joint):** controls the second link, adjusting the arm’s reach and vertical position.  
 
-See combined assembly
+**See the full assembly** [here](./stl/robot_arm_assembly.stl)
 
 ## Usage
 1. **Calibrate your SG90 servos**
